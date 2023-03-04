@@ -1,58 +1,54 @@
 package test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Tablero {
-
-	private char[][] matriz;
 	
-	public Tablero() {
-		super();
-		this.matriz =  new char[15][15];
-	}
+	// Atributos de la clase Tablero.
+	char[][] Matriz = new char[15][15];
+	Carro[] listaCarros = new Carro[18];
+	ArrayList<Huevo> listaHuevos = new ArrayList<Huevo>();
 
-	ArrayList<Huevo>listaHuevos = new ArrayList<Huevo>();
-	
-	public void lanzarHuevo() {
-		Random random = new Random();   
-		// Generates random integers 0 to 14  
-		int x = random.nextInt(15);   
-		// Generates random integers 0 to 14
-		int y = random.nextInt(15);
-		
-		Huevo h = new Huevo(x,y);
-		listaHuevos.add(h);
-		matriz[x][y] = 'h';
+	// Metodos de la clase Tablero.
+	public void CrearCarro() {
+//		Kromi kromi1 = new Kromi();
+//		Kromi kromi2 = new Kromi();
+//		Kromi kromi3 = new Kromi();
 	}
 	
-	//imprime linea matriz
-	public void mostrarMatriz() {
-		for (int i= 0; i < matriz.length; i++) {
-			for (int j= 0; j < matriz[0].length; j++) {
-				System.out.print(matriz[i][j] + " ");				
+	public void LanzarHuevo() {
+	}
+	
+	public void CrearTablero() {
+		for (int i = 0; i < 15; i++) {
+			for (int j = 0; j < 15; j++) {
+				Matriz[i][j] = '-';
 			}
-			System.out.println();
+		}
+		// Aqui va la logica de posicionamiento de carros en la matriz.
+	}
+	
+	public void MostrarTablero() {
+		for (int i = 0; i < 15; i++) {
+			for (int j = 0; j < 15; j++) {
+				System.out.print(Matriz[i][j]);
+				System.out.print("  ");
+			}
+			System.out.println("");
 		}
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Tablero tablero = new Tablero();
-		
-		char ele = '-';
-		
-		for (char[] row : tablero.matriz) {
-			Arrays.fill(row, ele);  
-		}
-		
-		tablero.lanzarHuevo();
-		
-		
-	
-		tablero.mostrarMatriz();
+	public void CalcularPuntaje() {
 	}
 	
+	// Constructor Vacio.
+	public Tablero() {
+	}
+	
+	// Constructor con atributos.
+	public Tablero(String nombre) {
+		this.Matriz = new char[15][15];
+	}
 	
 }
-
