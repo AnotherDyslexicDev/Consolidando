@@ -1,4 +1,5 @@
 package test;
+/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco */
 
 import java.util.*;
 
@@ -40,10 +41,10 @@ public class Tablero {
 		
 		Tablero tablero = new Tablero();
 		
-		char ele = '-';
+		char m = '-';
 		
 		for (char[] row : tablero.matriz) {
-			Arrays.fill(row, ele);  
+			Arrays.fill(row, m);  
 		}
 		
 		tablero.lanzarHuevo();
