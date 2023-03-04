@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author ascending
+ *
+ */
+module Consolidando {
+}
