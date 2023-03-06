@@ -11,6 +11,10 @@ public class Caguanos extends Carro {
 	//Constructor sin parametros
 	public Caguanos () {}
 	
+	
+
+
+
 	//Constructor parametrado
 	public Caguanos ( int cantidadOcupantes, int fechaIngreso, int fila, int columna, int alcanceTiro, String colorConfeti) {
 		super(cantidadOcupantes, fechaIngreso, fila, columna);
@@ -22,11 +26,18 @@ public class Caguanos extends Carro {
 	public int getAlcanceTiro() {
 		return alcanceTiro;
 	}
+	
+	public void setAlcanceTiro(int alcanceTiro) {
+		this.alcanceTiro = alcanceTiro;
+	}
 
 	public String getColorConfeti() {
 		return colorConfeti;
 	}
 	
+	public void setColorConfeti(String colorConfeti) {
+		this.colorConfeti = colorConfeti;
+	}
 	/*
 	public int getFila() {
 		return super.getFila();

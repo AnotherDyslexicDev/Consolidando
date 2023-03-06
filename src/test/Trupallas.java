@@ -21,10 +21,19 @@ public class Trupallas extends Carro {
 		return nivelArmadura;
 	}
 
+	public void setNivelArmadura(int nivelArmadura) {
+		this.nivelArmadura = nivelArmadura;
+	}
+
+	
 	public String getNombreConductor() {
 		return nombreConductor;
 	}
 	
+	public void setNombreConductor(String nombreConductor) {
+		this.nombreConductor = nombreConductor;
+	}
+
 	/*
 	public int getFila() {
 		return super.getFila();

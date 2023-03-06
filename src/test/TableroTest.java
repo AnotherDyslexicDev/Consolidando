@@ -1,14 +1,12 @@
 package test;
-/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco, John Banner 
- * Version 03.2023
- * */
+
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
 
-public class Tablero {
+public class TableroTest {
 
 	char[][] Matriz = new char[15][15];
 	Carro[] listaCarros = new Carro[18];
@@ -92,7 +90,7 @@ public class Tablero {
 	}
 	
 	//imprime linea matriz
-	public void mostrarTablero() {
+	public void crearTablero() {
 		for (int i= 0; i < Matriz.length; i++) {
 			for (int j= 0; j < Matriz[0].length; j++) {
 				System.out.print(Matriz[i][j] + " ");				
@@ -113,11 +111,11 @@ public class Tablero {
 		}
 		
 
+		
+		
 		tablero.lanzarHuevo();
-		
-		
 		tablero.generarKromis();
-		tablero.mostrarTablero();
+		tablero.crearTablero();
 	}
 	
 	

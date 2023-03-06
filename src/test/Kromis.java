@@ -19,10 +19,17 @@ public class Kromis extends Carro{
 		return periodoFabricacion;
 	}
 
+	public void setPeriodoFabricacion(int periodoFabricacion) {
+		this.periodoFabricacion = periodoFabricacion;
+	}
+
 	public String getMarca() {
 		return marca;
 	}
 	
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
 	/*
 	public int getFila() {
 		return super.getFila();
