@@ -2,7 +2,7 @@ package test;
 /* @author Mauricio Gutierrez, David Morales, Carlos Carrasco, John Banner 
  * Version 03.2023
  * */
-
+import java.lang.Math;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,17 +19,40 @@ public class Tablero {
 	ArrayList<Kromis>listaKromis = new ArrayList<Kromis>();
 	public void generarKromis() {
 	    Random random = new Random();   
-	 // Generar filas aleatorias para las Kromis
-	    int fila1 = random.nextInt(15);
-	    int fila2 = random.nextInt(15);
-	    int fila3 = random.nextInt(15);
-
-	    // Generar columnas aleatorias para las Kromis
+	 // Generar filas y columnas aleatorias para las Kromis
+	    int fila1 = random.nextInt(12);
 	    int columna1 = random.nextInt(15);   
+	   
+	    int fila2 = random.nextInt(12);
 	    int columna2 = random.nextInt(15);
+	    	
+	    	while (columna2 == columna1 && Math.abs(fila2 - fila1) < 3) {
+	    		  fila2 = random.nextInt(12);
+	    		  columna2 = random.nextInt(15);
+	    		  System.out.println("reintentando");
+	    	}
+	    	
+	    int fila3 = random.nextInt(12);
 	    int columna3 = random.nextInt(15);
-	    
-	    // Crear las tres Kromis con las posiciones generadas
+
+		    while ((columna3 == columna1 && Math.abs(fila3 - fila1) < 3) || (columna3 == columna2 && Math.abs(fila3 - fila2) < 3))  {
+	            // posiciones chocan, reintentar
+	         fila3 = random.nextInt(12);
+	        columna3 = random.nextInt(15);
+	        System.out.println("Reintentando");
+	    	}
+
+		   
+		    System.out.println("f1:" + fila1);
+		    System.out.println("c1:" + columna1);
+		    System.out.println("f2:" + fila2);
+		    System.out.println("c2:" +columna2);
+		    System.out.println("f3:" + fila3);
+		    
+		   
+		    System.out.println("c3:" + columna3);
+  
+	    // Crear las tres Kromis 
 	    Kromis k1 = new Kromis(50, 1990, fila1, columna1, 2023, "Kromi");
 	    listaKromis.add(k1);
 	    matriz[fila1][columna1] = 'K';
@@ -66,6 +89,8 @@ public class Tablero {
 		Huevo h = new Huevo(x,y);
 		listaHuevos.add(h);
 		matriz[x][y] = 'h';
+		System.out.println("huevo:" + x);
+		System.out.println("huevo:" + y);
 	}
 	
 	//imprime linea matriz

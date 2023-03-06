@@ -23,19 +23,14 @@ public class Kromis extends Carro{
 		return marca;
 	}
 	
-	//sobreescribimos metodo getFila para obtener las filas ocupadas por cada kromi
-	@Override
+	/*
 	public int getFila() {
 		return super.getFila();
 	}
-	public int getFila2() {
-		return super.getFila() + 1;
+	public int getColumna() {
+		return super.getColumna();
 	}
-	public int getFila3() {
-		return super.getFila() + 2;
-	}
-	
-	
+	*/
 	
 	
 }

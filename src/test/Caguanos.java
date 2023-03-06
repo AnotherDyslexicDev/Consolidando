@@ -27,12 +27,12 @@ public class Caguanos extends Carro {
 		return colorConfeti;
 	}
 	
-	//sobreescribimos metodo getColumna para obtener las Columnas ocupadas por cada caguano
-		@Override
-		public int getColumna() {
-			return super.getColumna();
-		}
-		public int getColumna2() {
-			return super.getColumna() + 1;
-		}
+	/*
+	public int getFila() {
+		return super.getFila();
+	}
+	public int getColumna() {
+		return super.getColumna();
+	}
+	*/
 }

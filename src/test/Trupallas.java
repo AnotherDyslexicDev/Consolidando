@@ -25,6 +25,14 @@ public class Trupallas extends Carro {
 		return nombreConductor;
 	}
 	
+	/*
+	public int getFila() {
+		return super.getFila();
+	}
+	public int getColumna() {
+		return super.getColumna();
+	}
+	*/
 	
 
 }
