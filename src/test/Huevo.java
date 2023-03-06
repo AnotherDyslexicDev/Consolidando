@@ -74,4 +74,3 @@ public class Huevo {
         return "Huevo: \nfila=" + fila + ", \ncolumna=" + columna + ", \npuntaje=" + puntaje + "git\n";
     }
 }
-
