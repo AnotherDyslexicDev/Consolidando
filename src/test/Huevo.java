@@ -35,9 +35,43 @@ public class Huevo {
         this.puntaje = puntaje;
     }
 
+    public void calcularPuntaje(Tablero tablero) {
+    	int contadorK =0;
+    	int contadorC =0;
+    	int contadorT =0;
+        String letra = tablero.getPosicion(fila, columna);
+        if (letra.equals("K")) {
+        	contadorK++;
+            Tablero.LanzarHuevo(fila, columna);
+            if (contadorK==3) {
+                puntaje += 10;
+            } else {
+                puntaje += 3;
+            }
+        } else if (letra.equals("C")) {
+        	contadorC++;
+            Tablero.LanzarHuevo(fila, columna);
+            if (contadorC==3) {
+                puntaje += 7;
+            } else {
+                puntaje += 2;
+            }
+        } else if (letra.equals("T")) {
+        	contadorT++;
+            Tablero.LanzarHuevo(fila, columna);
+            if (contadorT==3) {
+                puntaje += 0;
+            } else {
+                puntaje += 1;
+            }
+        } else {
+            Tablero.LanzarHuevo(fila, columna);
+            puntaje+=0;
+        }
+    }
     @Override
     public String toString() {
-        return "Huevo: \nfila=" + fila + ", \ncolumna=" + columna + ", \npuntaje=" + puntaje + "\n";
+        return "Huevo: \nfila=" + fila + ", \ncolumna=" + columna + ", \npuntaje=" + puntaje + "git\n";
     }
 }
 
