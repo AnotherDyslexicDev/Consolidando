@@ -7,12 +7,15 @@ public class Main {
 	public static void main(String[] args) {
 
 		Tablero tablero = new Tablero();
-		menuPrincipal(tablero);
-
+		Tablero tableroJugador = new Tablero();
+		Tablero tableroAux = new Tablero();
+		tableroJugador.CrearTablero();
+		
+		menuPrincipal(tablero, tableroJugador);
 	}
 
 	// Funcion para acceder al MENU PRINCIPAL.
-	public static void menuPrincipal(Tablero tablero) {
+	public static void menuPrincipal(Tablero tablero, Tablero tableroJugador) {
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 
@@ -31,19 +34,15 @@ public class Main {
 				System.out.println("	Partida Iniciada, buena suerte!.");
 				System.out.println("----------------------------------");
 				tablero.CrearTablero();
-				tablero.MostrarTablero();
 				tablero.CrearKromi(3);
-//				tablero.MostrarTablero();
 				tablero.CrearCaguano(5);
-//				tablero.MostrarTablero();
 				tablero.CrearTrupalla(10);
 				tablero.MostrarTablero();
-//				partidaIniciada(tablero);
+				partidaIniciada(tablero, tableroJugador);
 				
 			} else if (input.equals("2")) {
 				System.out.println("	Se han mostrado los puntajes");
 				System.out.println("----------------------------------");
-				tablero.MostrarTablero();
 				
 			} else if (input.equals("3")) {
 				System.out.println("	Se ha cerrado el juego.");
@@ -58,26 +57,31 @@ public class Main {
 	}
 
 	// Funcion para MENU en partida iniciada.
-	public static void partidaIniciada(Tablero tablero) {
+	public static void partidaIniciada(Tablero tablero, Tablero tableroJugador) {
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 
 		while (!input.equals("3")) {
 			System.out.println("[1] LANZAR HUEVO");
-			System.out.println("[2] MOSTRAR TABLERO Y PUNTAJE");
+			System.out.println("[2] MOSTRAR SOLUCION");
 			System.out.println("[3] FINALIZAR PARTIDA");
 			System.out.println("----------------------------------");
 			System.out.println("INGRESE NUMERO: ");
 			input = scan.nextLine();
 
 			if (input.equals("1")) {
-				System.out.println("	HUEVO LANZADO!");
+				System.out.println("	Se ha lanzado un huevo.");
 				System.out.println("----------------------------------");
-				tablero.CrearTablero();
+				tablero.LanzarHuevo(tablero, tableroJugador);
+				tablero.MostrarTablero();
+				tableroJugador.MostrarTablero();
+
+				
 			} else if (input.equals("2")) {
 				System.out.println("	Se ha mostrado el tablero.");
 				System.out.println("----------------------------------");
 				tablero.MostrarTablero();
+
 			} else if (input.equals("3")) {
 				System.out.println("	PARTIDA FINALIZADA.");
 				System.out.println("----------------------------------");

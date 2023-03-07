@@ -2,6 +2,7 @@ package test;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Tablero {
 	
@@ -11,34 +12,13 @@ public class Tablero {
 	ArrayList<Huevo> listaHuevos = new ArrayList<Huevo>();
 	static Random random = new Random();
 	
-
-	// Metodos de la clase Tablero.
-	/*
-	 * public void CrearCarro() {
-	 * 
-	 * Kromi nombre = new Kromi(4 + random.nextInt(5), 2000 + random.nextInt(24),
-	 * random.nextInt(13), random.nextInt(15), 1980 + random.nextInt(44),
-	 * "AllCatsAreBeautyfull");
-	 * 
-	 * Kromi kromi1 = new Kromi(4 + random.nextInt(5), 2000 + random.nextInt(24),
-	 * random.nextInt(13), random.nextInt(15), 1980 + random.nextInt(44),
-	 * "AllCatsAreBeautyfull"); Caguano caguano1 = new Caguano(2 +
-	 * random.nextInt(5), 2000 + random.nextInt(24), random.nextInt(15),
-	 * random.nextInt(14), 25 + random.nextInt(26), "Pink"); Trupalla trupalla1 =
-	 * new Trupalla(1 + random.nextInt(4), 2000 + random.nextInt(24),
-	 * random.nextInt(15), random.nextInt(15), 1 + random.nextInt(5),
-	 * "Sebastian Piranha");
-	 * 
-	 * //Verificacion de datos en los carros, se debe de incorporar el metodo
-	 * toString de la clase Carro y hacer poliformismo a las clases hijas. (Carlos)
-	 * listaCarros.forEach(name ->{ name.mostrarDatos(); }); }
-	 */
+	// Metodos para crear vehiculos y posicionarlos en el Tablero.
 	public void CrearKromi(int numero) {
 		for (int i = 0; i < numero; i++) {
 		listaCarros.add(new Kromi(4 + random.nextInt(5), 2000 + random.nextInt(24),
 				  random.nextInt(13), random.nextInt(15), 1980 + random.nextInt(44),
 				  "AllCatsAreBeautyfull"));
-		verificacionKromi(listaCarros.get(listaCarros.size() - 1));
+		verificacionCarro(listaCarros.get(listaCarros.size() - 1));
 		}
 	}
 	public void CrearCaguano(int numero) {
@@ -46,7 +26,7 @@ public class Tablero {
 		listaCarros.add(new Caguano(2 +
 				  random.nextInt(5), 2000 + random.nextInt(24), random.nextInt(15),
 				  random.nextInt(14), 25 + random.nextInt(26), "Pink"));
-		verificacionCaguano(listaCarros.get(listaCarros.size() - 1));
+		verificacionCarro(listaCarros.get(listaCarros.size() - 1));
 		}
 	}
 	public void CrearTrupalla(int numero) {
@@ -54,11 +34,43 @@ public class Tablero {
 		listaCarros.add(new Trupalla(1 + random.nextInt(4), 2000 + random.nextInt(24),
 				  random.nextInt(15), random.nextInt(15), 1 + random.nextInt(5),
 				  "Piranha Bot N: 0" + (i + 1)));
-		verificacionTrupalla(listaCarros.get(listaCarros.size() - 1));
+		verificacionCarro(listaCarros.get(listaCarros.size() - 1));
 		}
 	}
 	
-	public void LanzarHuevo() {
+	public void LanzarHuevo(Tablero tablero, Tablero tableroJugador) {
+		Scanner scan = new Scanner(System.in);
+		int x;
+		int y;
+		int puntaje;
+		System.out.println("	INGRESE NUMERO DE COLUMNA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
+		x = scan.nextInt();
+		scan.nextLine();
+		System.out.println("	INGRESE NUMERO DE FILA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
+		y = scan.nextInt();
+		scan.nextLine();
+		System.out.println("----------------------------------");
+		
+		if (tablero.Matriz[x][y] == '-') {
+			tableroJugador.Matriz[x][y] = 'H';
+			puntaje = 0;
+			System.out.println("Has fallado! + 0 Puntos.");
+		}
+		else if (tablero.Matriz[x][y] == 'K') {
+			tableroJugador.Matriz[x][y] = 'H';
+			puntaje = 3;
+			System.out.println("Has golpeado una Kromi! + 3 Puntos.");
+		}
+		else if (tablero.Matriz[x][y] == 'C') {
+			tableroJugador.Matriz[x][y] = 'H';
+			puntaje = 2;
+			System.out.println("Has golpeado un Caguano! + 2 Puntos.");
+		}
+		else if (tablero.Matriz[x][y] == 'T') {
+			tableroJugador.Matriz[x][y] = 'H';
+			puntaje = 1;
+			System.out.println("Has golpeado una Trupalla! + 1 Puntos.");
+		}
 	}
 	
 	public void CrearTablero() {
@@ -67,12 +79,6 @@ public class Tablero {
 				Matriz[i][j] = '-';
 			}
 		}
-		// Aqui va la logica de posicionamiento de carros en la matriz.
-//		for (int i = 0; i < listaCarros.size(); i++) {
-//			verificacionCarro(listaCarros.get(i));
-//			MostrarTablero();
-//			System.out.println("----------------------------------Vehiculo N: " + (i + 1));
-//		}
 	}
 	
 	public void MostrarTablero() {
@@ -91,11 +97,12 @@ public class Tablero {
 	
 
 	//funcion auxiliar de verificacion de posicionamiento de carro.
-	public static void verificacionKromi(Carro carro) {
+	public static void verificacionCarro(Carro carro) {
 		int x = carro.getColumna();
 		int y = carro.getFila();
 		boolean check = false;
 		
+		if (carro instanceof Kromi) {
 			while (!check) {
 				if (Matriz[x][y] == '-' && Matriz[x][y + 1] == '-' && Matriz[x][y + 2] == '-') {
 					Matriz[x][y] = 'K';
@@ -104,17 +111,12 @@ public class Tablero {
 					check = true;
 				}
 				else {
-					carro.setFila(random.nextInt(13));
-					carro.setColumna(random.nextInt(15));
+					x = random.nextInt(15);
+					y = random.nextInt(13);
 				}
 			}
-	}
-		
-	public static void verificacionCaguano(Carro carro) {
-		int x = carro.getColumna();
-		int y = carro.getFila();
-		boolean check = false;
-		
+		}
+		else if (carro instanceof Caguano) {
 			while (!check) {
 				if (Matriz[x][y] == '-' && Matriz[x + 1][y] == '-') {
 					Matriz[x][y] = 'C';
@@ -122,27 +124,23 @@ public class Tablero {
 					check = true;
 				}
 				else {
-					carro.setColumna(random.nextInt(15));
-					carro.setFila(random.nextInt(14));
+					x = random.nextInt(14);
+					y = random.nextInt(15);
 				}
 			}
-	}
-	
-	public static void verificacionTrupalla(Carro carro) {
-		int x = carro.getColumna();
-		int y = carro.getFila();
-		boolean check = false;
-		
+		}
+		else if (carro instanceof Trupalla) {
 			while (!check) {
 				if (Matriz[x][y] == '-') {
 					Matriz[x][y] = 'T';
 					check = true;
 				}
 				else {
-					carro.setColumna(random.nextInt(15));
-					carro.setFila(random.nextInt(15));
+					x = random.nextInt(15);
+					y = random.nextInt(15);
 				}
 			}
+		}
 	}
 	
 	// Constructor Vacio.
