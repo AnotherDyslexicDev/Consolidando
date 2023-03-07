@@ -3,20 +3,20 @@ package test;
  * Version 03.2023
  * */
 
-public class Caguanos extends Carro {
+public class Caguano extends Carro {
 
 	private int alcanceTiro;
 	private String colorConfeti;
 	
 	//Constructor sin parametros
-	public Caguanos () {}
+	public Caguano () {}
 	
 	
 
 
 
 	//Constructor parametrado
-	public Caguanos ( int cantidadOcupantes, int fechaIngreso, int fila, int columna, int alcanceTiro, String colorConfeti) {
+	public Caguano ( int cantidadOcupantes, int fechaIngreso, int fila, int columna, int alcanceTiro, String colorConfeti) {
 		super(cantidadOcupantes, fechaIngreso, fila, columna);
 		this.alcanceTiro = alcanceTiro;
 		this.colorConfeti = colorConfeti;

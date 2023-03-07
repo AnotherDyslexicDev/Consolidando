@@ -3,12 +3,12 @@ package test;
  * Version 03.2023
  * */
 
-public class Kromis extends Carro{
+public class Kromi extends Carro{
 
 	private int periodoFabricacion;
 	private String marca;
 	
-	public Kromis (int cantidadOcupantes, int fechaIngreso, int fila, int columna, int periodoFabricacion, String marca) {
+	public Kromi(int cantidadOcupantes, int fechaIngreso, int fila, int columna, int periodoFabricacion, String marca) {
 		super(cantidadOcupantes, fechaIngreso, fila, columna);
 		this.periodoFabricacion = periodoFabricacion;
 		this.marca = marca;

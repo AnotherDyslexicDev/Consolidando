@@ -3,14 +3,14 @@ package test;
  * Version 03.2023
  * */
 
-public class Trupallas extends Carro {
+public class Trupalla extends Carro {
 
 	private int nivelArmadura;
 	private String nombreConductor;
 	
-	public Trupallas () {}
+	public Trupalla() {}
 	
-	public Trupallas ( int cantidadOcupantes, int fechaIngreso, int fila, int columna, int nivelArmadura, String nombreConductor) {
+	public Trupalla( int cantidadOcupantes, int fechaIngreso, int fila, int columna, int nivelArmadura, String nombreConductor) {
 		super(cantidadOcupantes, fechaIngreso, fila, columna);
 		this.nivelArmadura = nivelArmadura;
 		this.nombreConductor = nombreConductor;

@@ -23,7 +23,7 @@ public class Carro {
 		
 	}
 
-	//accesadores
+	//accesadores y modificadores.
 	public int getCantidadOcupantes() {
 		return cantidadOcupantes;
 	}
@@ -61,7 +61,7 @@ public class Carro {
 	public void mostrarDatos() {
 		System.out.println("Cantidad de ocupantes: " + cantidadOcupantes);
 		System.out.println("Fecha de ingreso :" + fechaIngreso);
-		System.out.println("*Coordenadas*" + "\nFila:" + fila + "\nColumna: " + columna);
+		System.out.println("*Coordenadas*" + "\nFila: " + fila + "\nColumna: " + columna);
 	}
 
 }
