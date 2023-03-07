@@ -30,9 +30,14 @@ public class Main {
 			if (input.equals("1")) {
 				System.out.println("	Partida Iniciada, buena suerte!.");
 				System.out.println("----------------------------------");
-				tablero.CrearCarro();
 				tablero.CrearTablero();
+				tablero.MostrarTablero();
+				tablero.CrearKromi(3);
 //				tablero.MostrarTablero();
+				tablero.CrearCaguano(5);
+//				tablero.MostrarTablero();
+				tablero.CrearTrupalla(10);
+				tablero.MostrarTablero();
 //				partidaIniciada(tablero);
 				
 			} else if (input.equals("2")) {
