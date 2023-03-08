@@ -64,5 +64,11 @@ public class Carro {
 		System.out.println("*Coordenadas*" + "\nFila: " + fila + "\nColumna: " + columna);
 	}
 
+	@Override
+	public String toString() {
+	    return "*Carro* \nCantidad de ocupantes: " + this.cantidadOcupantes + "\nFecha de ingreso: " 
+	    		+ this.fechaIngreso + "\nUbicación: (" + this.fila + ", " + this.columna + ")";
+		}
+
 }
 

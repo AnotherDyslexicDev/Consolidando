@@ -43,5 +43,9 @@ public class Trupalla extends Carro {
 	}
 	*/
 	
+	@Override
+	public String toString() {
+	    return "*Trupalla* \nNivel de armadura: " + this.nivelArmadura + "\nPersona que lo manipula: " + this.nombreConductor;
+	}
 
 }

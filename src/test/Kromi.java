@@ -38,6 +38,10 @@ public class Kromi extends Carro{
 		return super.getColumna();
 	}
 	*/
-	
+	@Override
+	public String toString() {
+	    return "*Kromi* \nMarca: " + this.marca + "\nAño de fabricación: " + this.periodoFabricacion;
+	}
+
 	
 }
