@@ -1,4 +1,8 @@
 package test;
+/* Clase main donde se compila el juego
+ * @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * @version 03.2023
+ * */
 
 import java.util.Scanner;
 

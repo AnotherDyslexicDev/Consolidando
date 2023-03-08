@@ -1,4 +1,8 @@
 package test;
+/*	 
+ *  @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * 	@version 03.2023
+ * */
 
 public class Huevo {
     private int fila;
@@ -69,6 +73,10 @@ public class Huevo {
             puntaje+=0;
         }
     }*/
+    
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return "Huevo: \nfila=" + fila + ", \ncolumna=" + columna + ", \npuntaje=" + puntaje + "git\n";

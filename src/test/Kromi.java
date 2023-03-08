@@ -1,7 +1,9 @@
 package test;
-/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco, John Banner 
- * Version 03.2023
+/*	 
+ *  @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * 	@version 03.2023
  * */
+
 
 public class Kromi extends Carro{
 
@@ -14,7 +16,7 @@ public class Kromi extends Carro{
 		this.marca = marca;
 	}
  
-	//accesadores
+	/*Accesadores y mutadores */
 	public int getPeriodoFabricacion() {
 		return periodoFabricacion;
 	}
@@ -38,6 +40,9 @@ public class Kromi extends Carro{
 		return super.getColumna();
 	}
 	*/
+	/**
+	  * {@inheritDoc}
+	  */
 	@Override
 	public String toString() {
 	    return "*Kromi* \nMarca: " + this.marca + "\nAño de fabricación: " + this.periodoFabricacion;

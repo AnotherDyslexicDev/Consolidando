@@ -1,4 +1,7 @@
 package test;
+/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * @version 03.2023
+ * */
 
 import java.util.ArrayList;
 

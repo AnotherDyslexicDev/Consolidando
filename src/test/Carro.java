@@ -1,6 +1,7 @@
 package test;
-/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco, John Banner 
- * Version 03.2023
+/*	 
+ *  @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * 	@version 03.2023
  * */
 
 
@@ -14,7 +15,9 @@ public class Carro {
 	//constructor sin parametros
 	public Carro() {}
 	
-	//constructor parametrado
+	/* Constructor clase carro con sus parametros
+	 * @param cantidadOcupantes define numero de ocupantes del carro, fechaIngreso define fecha de ingreso a institucion
+	 */
 	public Carro(int cantidadOcupantes, int fechaIngreso, int fila, int columna) {
 		this.cantidadOcupantes = cantidadOcupantes;
 		this.fechaIngreso = fechaIngreso;
@@ -23,7 +26,7 @@ public class Carro {
 		
 	}
 
-	//accesadores y modificadores.
+	/*accesadores y modificadores. */
 	public int getCantidadOcupantes() {
 		return cantidadOcupantes;
 	}

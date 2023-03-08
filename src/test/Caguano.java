@@ -1,7 +1,9 @@
 package test;
-/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco, John Banner 
- * Version 03.2023
+/*	 
+ *  @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * 	@version 03.2023
  * */
+
 
 public class Caguano extends Carro {
 
@@ -22,7 +24,7 @@ public class Caguano extends Carro {
 		this.colorConfeti = colorConfeti;
 	}
 
-	//accesadores
+	/*Accesadores y mutadores */
 	public int getAlcanceTiro() {
 		return alcanceTiro;
 	}
@@ -46,7 +48,9 @@ public class Caguano extends Carro {
 		return super.getColumna();
 	}
 	*/
-	
+	/**
+	  * {@inheritDoc}
+	  */
 	@Override
 	public String toString() {
 	    return "*Caguano* \nAlcance de tiro: " + this.alcanceTiro + "\nColor de confeti: " + this.colorConfeti;
