@@ -46,4 +46,10 @@ public class Caguano extends Carro {
 		return super.getColumna();
 	}
 	*/
+	
+	@Override
+	public String toString() {
+	    return "*Caguano* \nAlcance de tiro: " + this.alcanceTiro + "\nColor de confeti: " + this.colorConfeti;
+	}
+
 }
