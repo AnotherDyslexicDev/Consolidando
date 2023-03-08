@@ -7,15 +7,16 @@ public class Main {
 	public static void main(String[] args) {
 
 		Tablero tablero = new Tablero();
+		tablero.CrearTablero();
 		Tablero tableroJugador = new Tablero();
-		Tablero tableroAux = new Tablero();
 		tableroJugador.CrearTablero();
 		
-		menuPrincipal(tablero, tableroJugador);
+		menuPrincipal(tablero);
+		partidaIniciada(tablero, tableroJugador);
 	}
 
 	// Funcion para acceder al MENU PRINCIPAL.
-	public static void menuPrincipal(Tablero tablero, Tablero tableroJugador) {
+	public static void menuPrincipal(Tablero tablero) {
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 
@@ -33,12 +34,10 @@ public class Main {
 			if (input.equals("1")) {
 				System.out.println("	Partida Iniciada, buena suerte!.");
 				System.out.println("----------------------------------");
-				tablero.CrearTablero();
 				tablero.CrearKromi(3);
 				tablero.CrearCaguano(5);
 				tablero.CrearTrupalla(10);
-				tablero.MostrarTablero();
-				partidaIniciada(tablero, tableroJugador);
+				break;
 				
 			} else if (input.equals("2")) {
 				System.out.println("	Se han mostrado los puntajes");
@@ -53,7 +52,6 @@ public class Main {
 				System.out.println("----------------------------------");
 			}
 		}
-		scan.close();
 	}
 
 	// Funcion para MENU en partida iniciada.
@@ -73,15 +71,15 @@ public class Main {
 				System.out.println("	Se ha lanzado un huevo.");
 				System.out.println("----------------------------------");
 				tablero.LanzarHuevo(tablero, tableroJugador);
-				tablero.MostrarTablero();
 				tableroJugador.MostrarTablero();
-
-				
 			} else if (input.equals("2")) {
 				System.out.println("	Se ha mostrado el tablero.");
 				System.out.println("----------------------------------");
 				tablero.MostrarTablero();
-
+				System.out.println("	PARTIDA FINALIZADA.");
+				System.out.println("----------------------------------");
+				System.exit(0);
+				
 			} else if (input.equals("3")) {
 				System.out.println("	PARTIDA FINALIZADA.");
 				System.out.println("----------------------------------");

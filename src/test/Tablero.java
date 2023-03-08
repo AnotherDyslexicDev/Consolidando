@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Tablero {
 	
 	// Atributos de la clase Tablero.
-	static char[][] Matriz = new char[15][15];
+	char[][] Matriz = new char[15][15];
 	ArrayList<Carro> listaCarros = new ArrayList<Carro>();
 	ArrayList<Huevo> listaHuevos = new ArrayList<Huevo>();
 	static Random random = new Random();
@@ -44,10 +44,10 @@ public class Tablero {
 		int y;
 		int puntaje;
 		System.out.println("	INGRESE NUMERO DE COLUMNA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		x = scan.nextInt();
+		x = scan.nextInt() - 1;
 		scan.nextLine();
 		System.out.println("	INGRESE NUMERO DE FILA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		y = scan.nextInt();
+		y = scan.nextInt() - 1;
 		scan.nextLine();
 		System.out.println("----------------------------------");
 		
@@ -71,6 +71,7 @@ public class Tablero {
 			puntaje = 1;
 			System.out.println("Has golpeado una Trupalla! + 1 Puntos.");
 		}
+		// crear objeto huevo y almacenar en arraylist.
 	}
 	
 	public void CrearTablero() {
@@ -97,7 +98,7 @@ public class Tablero {
 	
 
 	//funcion auxiliar de verificacion de posicionamiento de carro.
-	public static void verificacionCarro(Carro carro) {
+	public void verificacionCarro(Carro carro) {
 		int x = carro.getColumna();
 		int y = carro.getFila();
 		boolean check = false;
