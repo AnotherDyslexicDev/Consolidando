@@ -56,11 +56,11 @@ En este ejemplo usando las coordenadas de columna 5 y fila 8 hemos acertado en u
 *Si se llega a obtener 122 puntos el juego habrá terminado ya que no quedarán más carros dentro del tablero. <br><br>
 *Si uno quiere rendirse antes y revelar el tablero con la posición de los vehículos, basta con presionar la <strong>opción 2 MOSTRAR SOLUCION</strong> y el 
 juego terminará.<br>
-<h3>Ejemplo:</h3> <br>
+<h3>Ejemplo:</h3></i> <br>
 <img src="https://github.com/AnotherDyslexicDev/Consolidando/blob/main/img/solucion.png" width="300" height="300"/><br><br><br><br>
 
 <h2>Autores:</h2>
-Este código fue escrito por:<br> Mauricio Gutiérrez, David Morales y Carlos Carrasco.<br><br>
+<i>Este código fue escrito por:<br> Mauricio Gutiérrez, David Morales y Carlos Carrasco.<br><br>
 
 Historial de versiones
 
