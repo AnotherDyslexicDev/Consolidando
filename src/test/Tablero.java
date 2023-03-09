@@ -45,22 +45,29 @@ public class Tablero {
 	
 	public void LanzarHuevo(Tablero tablero, Tablero tableroJugador) {
 		Scanner scan = new Scanner(System.in);
-		int x;
-		int y;
-		
-		System.out.println("	INGRESE NUMERO DE FILA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		y = scan.nextInt() - 1;
-		scan.nextLine();
-		System.out.println("	INGRESE NUMERO DE COLUMNA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		x = scan.nextInt() - 1;
-		scan.nextLine();
+		int x = 0;
+		int y = 0;
+
+		do {
+			System.out.println("(VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
+			System.out.println("	INGRESE NUMERO DE FILA: ");
+			y = scan.nextInt() - 1;
+			scan.nextLine();
+			System.out.println("	INGRESE NUMERO DE COLUMNA: ");
+			x = scan.nextInt() - 1;
+			scan.nextLine();
+			if (y < 0 || y > 14 || x < 0 || x > 14) {
+				System.out.println("David: Deje de ser weon!, y ponga algo valido!.");
+				System.out.println("----------------------------------");
+			}
+		} while (y < 0 || y > 14 || x < 0 || x > 14);
 		System.out.println("----------------------------------");
-		
-		listaHuevos.add(new Huevo(x,y));
+
+		listaHuevos.add(new Huevo(x, y));
 		listaHuevos.get(listaHuevos.size() - 1).poblarJugador(x, y, tablero, tableroJugador);
-		
+
 		verificarPosicionVehiculo(listaHuevos.get(listaHuevos.size() - 1));
-		
+
 		System.out.println(listaHuevos.get(listaHuevos.size() - 1).getMensaje());
 		System.out.println("Tu puntaje actual es: " + CalcularPuntaje() + " Puntos.");
 
