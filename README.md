@@ -1,5 +1,5 @@
 <h1><img src="https://github.com/AnotherDyslexicDev/Consolidando/blob/main/img/cat.png" width="100" height="100"/>Invasion a la Cámara Secreta. </h1>
----------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 <h2>Dependencias</h2>
 
 <i>Este código requiere que <Strong>Java</strong> esté instalado en la máquina del usuario para poder ejecutarse.</i>
