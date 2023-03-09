@@ -1,17 +1,20 @@
 package test;
-/* Clase tablero, es la clase principal en donde se inician los atributos de la matriz,
- * carro y huevo.
- *  @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+
+/**
+ * @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
  * @version 03.2023
  * */
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Tablero {
 
-	/* Atributos clase tablero */
+	/*
+	 * Esta clase representa el tablero de juego. Contiene los atributos y métodos
+	 * necesarios para crear y mostrar el tablero, así como para crear y posicionar
+	 * los carros y los huevos en el mismo.
+	 */
 
 	// imprime matriz 15x15
 	char[][] Matriz = new char[15][15];
@@ -22,7 +25,12 @@ public class Tablero {
 	// objeto random que se usa para generar numeros aleatorios
 	static Random random = new Random();
 
-	/* Metodos para crear vehiculos y posicionarlos en el Tablero. */
+	/**
+	 * Crea un número determinado de carros de tipo Kromi, Caguano y Trupalla los
+	 * agrega a la lista de carros y verifica que no se creen en la misma posición.
+	 * 
+	 * @param numero la cantidad de carros de tipo Kromi que se crearán.
+	 */
 	// crea carro Kromi
 	public void CrearKromi(int numero) {
 		for (int i = 0; i < numero; i++) {
@@ -50,7 +58,9 @@ public class Tablero {
 		}
 	}
 
-	/* Metodo para crear huevo y posicionarlo en tablero */
+	/**
+	 * Metodo para crear huevo y posicionarlo en tablero en lugar especifico
+	 **/
 	public void LanzarHuevo(Tablero tablero, Tablero tableroJugador) {
 		Scanner scan = new Scanner(System.in);
 		int x;
@@ -84,7 +94,9 @@ public class Tablero {
 
 	} // cierre metodo
 
-	/* Metodos para crear y mostrar tablero */
+	/**
+	 * Metodos para crear y mostrar tablero
+	 **/
 	// crea tablero
 	public void CrearTablero() {
 		for (int i = 0; i < 15; i++) {
@@ -109,10 +121,10 @@ public class Tablero {
 	public void CalcularPuntaje() {
 	}
 
-	/*
+	/**
 	 * funcion auxiliar de verificacion de posicionamiento de carro. Al momento de
 	 * crear los carros verifica que no se creen en la misma posicion
-	 */
+	 **/
 	public void verificacionCarro(Carro carro) {
 		int x = carro.getColumna();
 		int y = carro.getFila();

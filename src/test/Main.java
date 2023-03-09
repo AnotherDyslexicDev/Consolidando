@@ -1,5 +1,6 @@
 package test;
-/* Clase main donde se compila el juego
+
+/**
  * @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
  * @version 03.2023
  * */
@@ -7,14 +8,18 @@ package test;
 import java.util.Scanner;
 
 public class Main {
-
+	/**
+	 * Función para acceder al menú principal del juego.
+	 * 
+	 * @param tablero el objeto Tablero creado para el juego.
+	 */
 	public static void main(String[] args) {
 
 		Tablero tablero = new Tablero();
 		tablero.CrearTablero();
 		Tablero tableroJugador = new Tablero();
 		tableroJugador.CrearTablero();
-		
+
 		menuPrincipal(tablero);
 		partidaIniciada(tablero, tableroJugador);
 	}
@@ -42,11 +47,11 @@ public class Main {
 				tablero.CrearCaguano(5);
 				tablero.CrearTrupalla(10);
 				break;
-				
+
 			} else if (input.equals("2")) {
 				System.out.println("	Se han mostrado los puntajes");
 				System.out.println("----------------------------------");
-				
+
 			} else if (input.equals("3")) {
 				System.out.println("	Se ha cerrado el juego.");
 				System.out.println("----------------------------------");
@@ -58,7 +63,12 @@ public class Main {
 		}
 	}
 
-	// Funcion para MENU en partida iniciada.
+	/**
+	 * Función para el menú en la partida iniciada.
+	 * 
+	 * @param tablero        El objeto Tablero creado para el juego.
+	 * @param tableroJugador El objeto Tablero creado para el jugador.
+	 */
 	public static void partidaIniciada(Tablero tablero, Tablero tableroJugador) {
 		Scanner scan = new Scanner(System.in);
 		String input = "";
@@ -83,7 +93,7 @@ public class Main {
 				System.out.println("	PARTIDA FINALIZADA.");
 				System.out.println("----------------------------------");
 				System.exit(0);
-				
+
 			} else if (input.equals("3")) {
 				System.out.println("	PARTIDA FINALIZADA.");
 				System.out.println("----------------------------------");
