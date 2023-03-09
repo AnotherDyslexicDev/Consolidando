@@ -1,20 +1,37 @@
 package test;
-/* @author Mauricio Gutierrez, David Morales, Carlos Carrasco, John Banner 
- * Version 03.2023
+/**
+ * @author Mauricio Gutierrez, David Morales, Carlos Carrasco 
+ * @version 03.2023
  * */
+
+/**
+ * La clase Kromi extiende de la clase Carro e incluye atributos adicionales.
+ */
 
 public class Kromi extends Carro{
 
 	private int periodoFabricacion;
 	private String marca;
-	
+	/**
+	 * Constructor de la clase Kromi que recibe todos los atributos necesarios para
+	 * crear una Kromi.
+	 * 
+	 * @param cantidadOcupantes,  Cantidad de ocupantes de la Kromi.
+	 * @param fechaIngreso,       Fecha de ingreso de la Kromi a la institución.
+	 * @param fila                Fila en la que se encuentra la Kromi en el
+	 *                            tablero.
+	 * @param columna,            Columna en la que se encuentra la Kromi en el
+	 *                            tablero.
+	 * @param periodoFabricacion, Año de fabricación de la Kromi.
+	 * @param marca,              Marca de la Kromi.
+	 */
 	public Kromi(int cantidadOcupantes, int fechaIngreso, int fila, int columna, int periodoFabricacion, String marca) {
 		super(cantidadOcupantes, fechaIngreso, fila, columna);
 		this.periodoFabricacion = periodoFabricacion;
 		this.marca = marca;
 	}
  
-	//accesadores
+	/* Accesadores y mutadores */
 	public int getPeriodoFabricacion() {
 		return periodoFabricacion;
 	}
