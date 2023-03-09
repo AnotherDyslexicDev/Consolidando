@@ -78,7 +78,6 @@ public class Huevo {
 	 * (contadorT==3) { puntaje += 0; } else { puntaje += 1; } } else {
 	 * Tablero.LanzarHuevo(fila, columna); puntaje+=0; } }
 	 */
-
 	/**
 	 * {@inheritDoc}
 	 */
