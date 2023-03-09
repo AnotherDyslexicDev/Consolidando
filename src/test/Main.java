@@ -29,7 +29,11 @@ public class Main {
 			System.out.println("[3] SALIR");
 			System.out.println("----------------------------------");
 			System.out.println("INGRESE NUMERO: ");
-			input = scan.nextLine();
+			try {
+				input = scan.nextLine();
+			} catch (Exception e) {
+				System.out.println("input invalido, intenta otra vez.");
+			}
 
 			if (input.equals("1")) {
 				System.out.println("	Partida Iniciada, buena suerte!.");
@@ -66,7 +70,11 @@ public class Main {
 			System.out.println("[3] FINALIZAR PARTIDA");
 			System.out.println("----------------------------------");
 			System.out.println("INGRESE NUMERO: ");
-			input = scan.nextLine();
+			try {
+				input = scan.nextLine();
+			} catch (Exception e) {
+				System.out.println("input invalido, intenta otra vez.");
+			}
 
 			if (input.equals("1")) {
 				System.out.println("	Se ha lanzado un huevo.");
