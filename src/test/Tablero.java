@@ -48,26 +48,22 @@ public class Tablero {
 		int x;
 		int y;
 		
-		System.out.println("	INGRESE NUMERO DE COLUMNA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		x = scan.nextInt() - 1;
-		scan.nextLine();
 		System.out.println("	INGRESE NUMERO DE FILA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
 		y = scan.nextInt() - 1;
 		scan.nextLine();
+		System.out.println("	INGRESE NUMERO DE COLUMNA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
+		x = scan.nextInt() - 1;
+		scan.nextLine();
 		System.out.println("----------------------------------");
-	//	Huevo huveo = new Huevo(x,y);
+		
 		listaHuevos.add(new Huevo(x,y));
 		listaHuevos.get(listaHuevos.size() - 1).poblarJugador(x, y, tablero, tableroJugador);
+		
 		verificarPosicionVehiculo(listaHuevos.get(listaHuevos.size() - 1));
+		
 		System.out.println(listaHuevos.get(listaHuevos.size() - 1).getMensaje());
 		System.out.println("Tu puntaje actual es: " + CalcularPuntaje() + " Puntos.");
-		/*
-		 * puntaje += huveo.obtenerPuntaje(x, y, tablero,tableroJugador); String mensaje
-		 * = huveo.getMensaje(); System.out.println(mensaje
-		 * +"\nEl puntaje acumulado es : "+puntaje);
-		 */
 
-		// crear objeto huevo y almacenar en arraylist.
 	}
 	
 	public void CrearTablero() {
@@ -96,22 +92,29 @@ public class Tablero {
 			puntaje = puntaje + listaHuevos.get(i).getPuntaje();
 		}
 		
+		// puntaje extra si se destruye completamente una Kromi.
 	  	for (int i = 0; i < posiciones.size(); i++) { 
-	  		for (int j = 0; j < posiciones.get(i).size(); j++) {
-	  			if (posiciones.get(i).size() == 3 && posiciones.get(i).get(j).getY() == 99 && posiciones.get(i).get(j).getX() == 99) {
-	  				puntaje = puntaje + 10;
-	  			}
+	  		if (posiciones.get(i).size() == 3) {
+	  				if (posiciones.get(i).get(0).getY() == 99 && posiciones.get(i).get(0).getX() == 99 &&
+	  					posiciones.get(i).get(1).getY() == 99 && posiciones.get(i).get(1).getX() == 99 &&
+	  					posiciones.get(i).get(2).getY() == 99 && posiciones.get(i).get(2).getX() == 99 ) {
+		  				puntaje = puntaje + 10;
+		  				System.out.println("puntaje calculado");
+	  				}
 	  		}
 	  	}
 	  	
+		// puntaje extra si se destruye completamente un Caguano.
 	  	for (int i = 0; i < posiciones.size(); i++) { 
-	  		for (int j = 0; j < posiciones.get(i).size(); j++) {
-	  			if (posiciones.get(i).size() == 2 && posiciones.get(i).get(j).getY() == 99 && posiciones.get(i).get(j).getX() == 99) {
-	  				puntaje = puntaje + 7;
-	  			}
+	  		if (posiciones.get(i).size() == 2) {
+	  				if (posiciones.get(i).get(0).getY() == 99 && posiciones.get(i).get(0).getX() == 99 &&
+	  					posiciones.get(i).get(1).getY() == 99 && posiciones.get(i).get(1).getX() == 99 ) {
+		  				puntaje = puntaje + 7;
+		  				System.out.println("puntaje calculado");
+	  				}
 	  		}
 	  	}
-		
+	  	
 		return puntaje;
 	}
 
@@ -173,36 +176,37 @@ public class Tablero {
 			int x = listaCarros.get(listaCarros.size() - 1).getColumna();
 			int y = listaCarros.get(listaCarros.size() - 1).getFila();
 			ArrayList<Posicion> posicion = new ArrayList<Posicion>();
-			posicion.add(new Posicion(x, y));
-			posicion.add(new Posicion(x, y + 1));
-			posicion.add(new Posicion(x, y + 2));
+			posicion.add(new Posicion(x + 1, y + 1));
+			posicion.add(new Posicion(x + 1, y + 2));
+			posicion.add(new Posicion(x + 1, y + 3));
 			posiciones.add(posicion);
 		}
 		if (carro instanceof Caguano ) {
 			int x = listaCarros.get(listaCarros.size() - 1).getColumna();
 			int y = listaCarros.get(listaCarros.size() - 1).getFila();
 			ArrayList<Posicion> posicion = new ArrayList<Posicion>();
-			posicion.add(new Posicion(x, y));
-			posicion.add(new Posicion(x + 1, y));
+			posicion.add(new Posicion(x + 1, y + 1));
+			posicion.add(new Posicion(x + 2, y + 1));
 			posiciones.add(posicion);
 		}
 		if (carro instanceof Trupalla ) {
 			int x = listaCarros.get(listaCarros.size() - 1).getColumna();
 			int y = listaCarros.get(listaCarros.size() - 1).getFila();
 			ArrayList<Posicion> posicion = new ArrayList<Posicion>();
-			posicion.add(new Posicion(x, y));
+			posicion.add(new Posicion(x + 1, y + 1));
 			posiciones.add(posicion);
 		}
 	}
 	
 	public void	verificarPosicionVehiculo(Huevo huevo) {
-		  int x = huevo.getColumna(); 
-		  int y = huevo.getFila(); 
+		  int y = huevo.getColumna() + 1;  
+		  int x = huevo.getFila() + 1; 
+		  
 		  	for (int i = 0; i < posiciones.size(); i++) { 
 		  		for (int j = 0; j < posiciones.get(i).size(); j++) {
 		  			if (posiciones.get(i).get(j).getX() == x && posiciones.get(i).get(j).getY() == y) {
-		  				posiciones.get(i).get(j).setX(99);
-		  				posiciones.get(i).get(j).setY(99);
+			  				posiciones.get(i).get(j).setX(99);
+			  				posiciones.get(i).get(j).setY(99);
 		  			}
 		  		}
 		  	}
