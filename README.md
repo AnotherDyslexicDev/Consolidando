@@ -1,4 +1,4 @@
-<h1><img src="https://i.pinimg.com/originals/0e/c1/f8/0ec1f8ebfb5dda3f483a6fd971576887.png" width="100" height="100"/>Invasion a la Cámara Secreta. </h1>
+<h1><img src="https://github.com/AnotherDyslexicDev/Consolidando/blob/main/img/cat.png" width="100" height="100"/>Invasion a la Cámara Secreta. </h1>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 <h2>Dependencias</h2>
 
