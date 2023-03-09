@@ -64,6 +64,19 @@ public class Tablero {
 		int x;
 		int y;
 
+		do {
+			System.out.println("(VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
+			System.out.println("	INGRESE NUMERO DE FILA: ");
+			y = scan.nextInt() - 1;
+			scan.nextLine();
+			System.out.println("	INGRESE NUMERO DE COLUMNA: ");
+			x = scan.nextInt() - 1;
+			scan.nextLine();
+			if (y < 0 || y > 14 || x < 0 || x > 14) {
+				System.out.println("David: Deje de ser weon!, y ponga algo valido!.");
+				System.out.println("----------------------------------");
+			}
+		} while (y < 0 || y > 14 || x < 0 || x > 14);
 		System.out.println("	INGRESE NUMERO DE FILA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
 		y = scan.nextInt() - 1;
 		scan.nextLine();
