@@ -1,5 +1,5 @@
 <h1><img src="https://github.com/AnotherDyslexicDev/Consolidando/blob/main/img/cat.png" width="100" height="100"/>Invasion a la Cámara Secreta. </h1>
-------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 <h2>Dependencias</h2>
 
 <i>Este código requiere que <Strong>Java</strong> esté instalado en la máquina del usuario para poder ejecutarse.</i>
@@ -36,7 +36,7 @@ En el tablero se definen bajo la letra T y ocupan solo 1 espacio del tablero.<br
 Impactar una Trupalla asigna <Strong>1 punto</strong>, este tipo de vehículo no genera puntaje extra.</i>
 
 
-Al iniciar el juego se despliegan <Strong>3 opciones. </strong><br><br>
+<i>Al iniciar el juego se despliegan <Strong>3 opciones. </strong><br><br>
 <strong>1.</strong> Inicia juego: Crea el tablero 15x15 con los vehículos en posiciones aleatorias.<br>
 En el tablero se crearán <strong>3 Kromis</strong>, <strong>5 Caguanos</strong> y <strong>10 Trupallas</strong>. <br>Para que se despliegue el tablero de manera visual 
 primero debemos lanzar un huevo ingresando nuevamente la opcion 1 LANZAR HUEVO e ingresando las coordenadas donde queremos que vaya dirigido.
@@ -60,11 +60,11 @@ juego terminará.<br>
 <img src="https://github.com/AnotherDyslexicDev/Consolidando/blob/main/img/solucion.png" width="300" height="300"/><br><br><br><br>
 
 <h2>Autores:</h2>
-Este código fue escrito por Mauricio Gutiérrez, David Morales y Carlos Carrasco.<br>
+Este código fue escrito por:<br> Mauricio Gutiérrez, David Morales y Carlos Carrasco.<br><br>
 
 Historial de versiones
 
-Java<br>
-03.2023: Versión inicial del código.
+Java<br><br>
+03.2023: Versión inicial del código.</i>
 
 
