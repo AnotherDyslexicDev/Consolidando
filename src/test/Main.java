@@ -78,7 +78,6 @@ public class Main {
 		String input = "";
 
 		while (!input.equals("3")) {
-			tablero.MostrarTablero();
 			System.out.println("[1] LANZAR HUEVO");
 			System.out.println("[2] MOSTRAR SOLUCION");
 			System.out.println("[3] FINALIZAR PARTIDA");
@@ -91,7 +90,7 @@ public class Main {
 			}
 
 			if (input.equals("1")) {
-				System.out.println("	Se ha lanzado un huevo.");
+				System.out.println("	Se va a lanzar un huevo.");
 				System.out.println("----------------------------------");
 				tablero.LanzarHuevo(tablero, tableroJugador);
 				tableroJugador.MostrarTablero();

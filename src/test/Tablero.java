@@ -63,7 +63,6 @@ public class Tablero {
 		Scanner scan = new Scanner(System.in);
 		int x;
 		int y;
-
 		do {
 			System.out.println("(VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
 			System.out.println("	INGRESE NUMERO DE FILA: ");
@@ -77,12 +76,7 @@ public class Tablero {
 				System.out.println("----------------------------------");
 			}
 		} while (y < 0 || y > 14 || x < 0 || x > 14);
-		System.out.println("	INGRESE NUMERO DE FILA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		y = scan.nextInt() - 1;
-		scan.nextLine();
-		System.out.println("	INGRESE NUMERO DE COLUMNA: (VALOR ENTERO ENTRE 1 y 15 INCLUSIVES)");
-		x = scan.nextInt() - 1;
-		scan.nextLine();
+
 		System.out.println("----------------------------------");
 
 		listaHuevos.add(new Huevo(x, y));
